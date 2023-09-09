@@ -1,6 +1,9 @@
-from data import Item
+from data import *
 from datetime import datetime
 
+storage = FileStorage('/home/tumbochka/pokupki.txt')
+item_list = ItemList.load(storage)
 a = Item('apples', 'asdf', datetime.now(), 100)
-a_clone = Item.from_save_str(a.to_save_str())
-assert(a.to_save_str() == a_clone.to_save_str())
+
+item_list.add(a)
+item_list.add(a)

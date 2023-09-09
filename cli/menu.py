@@ -1,11 +1,14 @@
 from cli.command import Command
-def run_test(args, items):
-    print('test!!!')
-test_command = Command('test', 'asdf', run_test)
-commands = [test_command]
+
+commands = []
+def run_help(args, items):
+    for command in commands:
+        print(f"{command.name} - {command.help}")
+help_command = Command('с', 'выводит это сообщение', run_help)
+commands.append(help_command)
 def start(item_list):
     while True:
-        command_text = input('Введите команду: ')
+        command_text = input('Введите команду(с - справка): ')
         if command_text == '':
             continue
         command_name, *args = command_text.split(' ')

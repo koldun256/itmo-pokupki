@@ -26,6 +26,14 @@ class Item:
     def from_save_str(save_str):
         name, category, date, cost = save_str.split('\t')
         return Item(name, category, datetime.fromisoformat(date), int(cost))
+    
+    def to_str(self):
+        return ' | '.join((
+            self.name,
+            self.category,
+            self.date.strftime('%d.%m.%y'),
+            str(self.cost)
+        ))
 
 class ItemList:
     def __init__(self, items, storage):
@@ -40,7 +48,7 @@ class ItemList:
         if content == '':
             return []
         return [Item.from_save_str(line) for line in content.split('\n')]
-    
+
     @staticmethod
     def load(storage):
         return ItemList(ItemList.from_save_str(storage.read()), storage)
@@ -51,3 +59,6 @@ class ItemList:
     def add(self, new_item):
         self.items.append(new_item)
         self.save()
+    
+    def get_categories(self):
+        return set(item.category for item in self.items)

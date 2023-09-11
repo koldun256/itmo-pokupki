@@ -1,6 +1,6 @@
 from cli.command import Command
-
-commands = []
+from cli.create import create_command
+commands = [create_command]
 def run_help(args, items):
     for command in commands:
         print(f"{command.name} - {command.help}")

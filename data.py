@@ -70,3 +70,13 @@ class ItemList:
     
     def get_last_id(self):
         return max((item.id for item in self.items), default = 0)
+    
+    def get_by_id(self, item_id):
+        return next(item for item in self.items if item.id if item.id == item_id)
+    
+    def delete(self, item_id):
+        len1 = len(self.items)
+        self.items = [item for item in self.items if item.id != item_id]
+        if len1 == len(self.items): # no item with id item_id
+            raise IndexError
+        self.save()

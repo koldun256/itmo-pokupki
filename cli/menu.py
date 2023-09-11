@@ -2,7 +2,9 @@ from cli.command import Command
 from cli.create import create_command
 from cli.recent import recent_command
 from cli.exit import exit_command
-commands = [create_command, recent_command, exit_command]
+from cli.delete import delete_command
+
+commands = [create_command, recent_command, exit_command, delete_command]
 def run_help(args, items):
     for command in commands:
         print(command.help)

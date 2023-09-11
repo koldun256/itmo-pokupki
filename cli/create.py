@@ -79,4 +79,4 @@ def run_create_command(args, item_list):
     item_list.add(new_item)
     print(f"Покупка \"{new_item.to_str()}\" добавлена")
 
-create_command = Command('н', 'новая покупка', run_create_command)
+create_command = Command('н', 'н - новая покупка', run_create_command)

@@ -18,17 +18,21 @@ class Item:
         self.category = category
         self.date = date
         self.cost = cost
+        self.id = None
 
     def to_save_str(self):
-        return f"{self.name}\t{self.category}\t{self.date}\t{self.cost}"
+        return f"{self.id}\t{self.name}\t{self.category}\t{self.date}\t{self.cost}"
     
     @staticmethod
     def from_save_str(save_str):
-        name, category, date, cost = save_str.split('\t')
-        return Item(name, category, datetime.fromisoformat(date), int(cost))
+        item_id, name, category, date, cost = save_str.split('\t')
+        new_item = Item(name, category, datetime.fromisoformat(date), int(cost))
+        new_item.id = int(item_id)
+        return new_item
     
     def to_str(self):
         return ' | '.join((
+            str(self.id),
             self.name,
             self.category,
             self.date.strftime('%d.%m.%y'),
@@ -57,8 +61,12 @@ class ItemList:
         self.storage.write(self.to_save_str())
     
     def add(self, new_item):
+        new_item.id = self.get_last_id() + 1
         self.items.append(new_item)
         self.save()
     
     def get_categories(self):
         return set(item.category for item in self.items)
+    
+    def get_last_id(self):
+        return max((item.id for item in self.items), default = 0)

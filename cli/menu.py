@@ -1,8 +1,8 @@
 from cli.command import Command
-from cli.create import create_command
-from cli.recent import recent_command
-from cli.exit import exit_command
-from cli.delete import delete_command
+from cli.commands.create import create_command
+from cli.commands.recent import recent_command
+from cli.commands.exit import exit_command
+from cli.commands.delete import delete_command
 
 commands = [create_command, recent_command, exit_command, delete_command]
 

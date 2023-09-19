@@ -3,8 +3,15 @@ from cli.commands.create import create_command
 from cli.commands.recent import recent_command
 from cli.commands.exit import exit_command
 from cli.commands.delete import delete_command
+from cli.commands.categories import category_command
 
-commands = [create_command, recent_command, exit_command, delete_command]
+commands = [
+    create_command,
+    recent_command,
+    exit_command,
+    delete_command,
+    category_command
+]
 
 
 def run_help(args, items):

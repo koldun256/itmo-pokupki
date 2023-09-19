@@ -72,7 +72,10 @@ class ItemList:
         return max((item.id for item in self.items), default = 0)
     
     def get_by_id(self, item_id):
-        return next(item for item in self.items if item.id == item_id)
+        try:
+            return next(item for item in self.items if item.id == item_id)
+        except StopIteration:
+            raise KeyError
     
     def delete(self, item_id):
         len1 = len(self.items)

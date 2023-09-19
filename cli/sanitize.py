@@ -1,13 +1,6 @@
 from datetime import datetime
 
 
-def sanitize_cost(data):
-    result = int(data)
-    if result <= 0:
-        raise ValueError()
-    return result
-
-
 def sanitize_str(data):
     if data == '':
         raise ValueError()
@@ -38,3 +31,11 @@ def sanitize_date(data):
         return datetime.fromisoformat(f"{year}-{month}-{day}")
 
     raise ValueError()
+
+
+def sanitize_int(data):
+    val = int(data)
+    if val <= 0:
+        raise ValueError
+    return val
+

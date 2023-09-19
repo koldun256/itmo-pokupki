@@ -1,4 +1,4 @@
-from cli.sanitize import sanitize_str, sanitize_cost, sanitize_date, sanitize_bool
+from cli.sanitize import sanitize_str, sanitize_int, sanitize_date, sanitize_bool
 from data import Item
 from cli.command import Command
 from datetime import datetime
@@ -60,7 +60,7 @@ def get_cost():
         return None
 
     try:
-        return sanitize_cost(user_input)
+        return sanitize_int(user_input)
     except ValueError:  # try again
         return get_cost()
 

@@ -27,4 +27,6 @@ def start(item_list):
             command.run(args, item_list)
         except StopIteration:
             print(f"Нет команды {command_name}!")
+        except:
+            print(f"Неизвестная ошибка")
 

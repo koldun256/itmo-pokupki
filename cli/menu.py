@@ -4,13 +4,15 @@ from cli.commands.recent import recent_command
 from cli.commands.exit import exit_command
 from cli.commands.delete import delete_command
 from cli.commands.categories import category_command
+from cli.commands.modify import modify_command
 
 commands = [
     create_command,
     recent_command,
     exit_command,
     delete_command,
-    category_command
+    category_command,
+    modify_command
 ]
 
 
@@ -34,6 +36,6 @@ def start(item_list):
             command.run(args, item_list)
         except StopIteration:
             print(f"Нет команды {command_name}!")
-        except:
-            print(f"Неизвестная ошибка")
+        except Exception:
+             print(f"Неизвестная ошибка")
 

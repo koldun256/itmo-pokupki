@@ -1,22 +1,22 @@
-from cli.item_form import get_name, get_category, get_date, get_cost
+from cli.questions import *
 from data import Item
 from cli.command import Command
 
 
 def run_create_command(args, item_list):
-    name = get_name()
+    name = ask_name()
     if name is None:
         return
 
-    category = get_category(item_list.get_categories())
+    category = ask_category(item_list.get_categories())
     if category is None:
         return
 
-    date = get_date()
+    date = ask_date()
     if date is None:
         return
 
-    cost = get_cost()
+    cost = ask_cost()
     if cost is None:
         return
 

@@ -10,7 +10,7 @@ def display_category(category, item_list):
     ]
     total_cost = sum(item.cost for item in category_items)
     item_count = len(category_items)
-    print(f"{category} ({item_count} | {total_cost})")
+    print(f"{category} ({item_count} | {total_cost}):")
     for item in category_items:
         print(item.to_str())
 

@@ -4,7 +4,7 @@ from datetime import datetime
 def sanitize_str(data):
     if data == '':
         raise ValueError()
-    return data.replace('\t', ' ').replace('|', '')
+    return data.replace('\t', ' ').replace('|', '').strip()
 
 
 def sanitize_bool(data, default):

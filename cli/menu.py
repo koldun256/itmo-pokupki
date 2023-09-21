@@ -5,6 +5,7 @@ from cli.commands.exit import exit_command
 from cli.commands.delete import delete_command
 from cli.commands.categories import category_command
 from cli.commands.modify import modify_command
+from cli.commands.date import date_command
 
 commands = [
     create_command,
@@ -12,7 +13,8 @@ commands = [
     exit_command,
     delete_command,
     category_command,
-    modify_command
+    modify_command,
+    date_command
 ]
 
 

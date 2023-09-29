@@ -1,6 +1,6 @@
 from cli.command_router import process_command, UnknownCommandException
 
-def start(item_list):
+def start_cli(item_list):
     while True:
         command_text = input('Введите команду(с - справка): ')
         if command_text == '':

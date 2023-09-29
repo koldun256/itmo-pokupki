@@ -12,7 +12,7 @@ def run_recent_command(args, item_list):
         n = 10
 
     for item in sorted(
-            item_list.items,
+            item_list.get_items(),
             key=lambda item: item.date,
             reverse=True)[:n]:
         print(item.to_str())

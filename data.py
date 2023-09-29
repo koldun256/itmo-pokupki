@@ -72,6 +72,10 @@ class ItemList:
         self.storage.write(self.to_save_str())
     
 
+    def get_items(self):
+        return self.items
+
+
     def add(self, new_item):
         new_item.id = self.get_last_id() + 1
         self.items.append(new_item)

@@ -5,7 +5,7 @@ def display_category(category, item_list):
     category_items = [
         item
         for item
-        in item_list.items
+        in item_list.get_items()
         if item.category == category
     ]
     total_cost = sum(item.cost for item in category_items)

@@ -1,7 +1,7 @@
 from cli.command import Command
 
 def list_by_cost(args, item_list, descending=True):
-    for item in sorted(item_list.items,
+    for item in sorted(item_list.get_items(),
                        key=lambda item: item.cost,
                        reverse=descending):
         print(item.to_str())

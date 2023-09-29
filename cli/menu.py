@@ -6,6 +6,8 @@ from cli.commands.delete import delete_command
 from cli.commands.categories import category_command
 from cli.commands.modify import modify_command
 from cli.commands.date import date_command
+from cli.commands.list_by_cost import \
+        list_by_cost_ascending_command, list_by_cost_descending_command
 
 commands = [
     create_command,
@@ -14,7 +16,9 @@ commands = [
     delete_command,
     category_command,
     modify_command,
-    date_command
+    date_command,
+    list_by_cost_ascending_command,
+    list_by_cost_descending_command,
 ]
 
 

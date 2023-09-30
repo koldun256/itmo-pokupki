@@ -101,5 +101,5 @@ class ItemList:
         len1 = len(self.items)
         self.items = [item for item in self.items if item.id != item_id]
         if len1 == len(self.items): # no item with id item_id
-            raise IndexError
+            raise KeyError
         self.save()

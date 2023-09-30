@@ -66,6 +66,8 @@ def run_modify_command(args, item_list):
             item.cost = new_cost
     item_list.save()
     print(f"Покупка \"{item.to_str()}\" сохранена")
+
+
 modify_command = Command(
     'р',
     'р [id] [поле] [значение] - редактирует покупку [id], изменяя значение в поле [поле]',

@@ -38,7 +38,7 @@ def run_delete_command(args, item_list):
 
 delete_command = Command(
     'у',
-    'у [ID] - удалить покупку с заданым ID',
+    'у [id] - удалить покупку с заданым id',
     run_delete_command
 )
 
